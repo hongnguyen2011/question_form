@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testmoz Test</title>
+    <meta name="description" content="" />
+    <meta name="ROBOTS" content="NOODP" />
+
+    <script>
+        var the_hash = window.location.hash.substring(1);
+        if (the_hash.length && the_hash != "admin" && the_hash != "student") {
+            document.write('<meta http-equiv="refresh" content="0; URL=\'?tags=' + the_hash + '\'" />');
+            document.write('<!--');
+        }
+    </script>
+
+    <link rel="shortcut icon" href="/static/1664107971/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/1664107971/favicon.ico" type="image/x-icon">
+    <link href="/static/1664107971/css/reboot.css" rel="stylesheet" type="text/css" />
+    <link href="/static/1664107971/css/quiz.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            margin: 20px auto;
+            font-family: "Arial", "Verdana", sans-serif;
+            color: #444;
+            background-color: #9ea4a7;
+            background-color: hsla(214, 5%, 95%, 1);
+            max-width: 600px;
+        }
+
+        @media only screen {
+            body {
+                max-width: 600px;
+            }
+            .quizcss .hover:hover,
+            .quizcss .matching-left>div:hover,
+            .quizcss .matching-right>div:hover,
+            .quizcss .multiple-response-answers>div:hover,
+            .quizcss .matching-response>div:hover,
+            .quizcss .file-adder-over,
+            .quizcss .media-field-data:hover {
+                background-color: #f2f2f3;
+            }
+            body,
+            .quizcss .comment-readonly,
+            .quizcss .comment-readonly textarea {
+                background-color: #f2f2f3;
+                color: #000000;
+            }
+            .quizcss #next-left svg,
+            .quizcss #next-right svg {
+                color: #000000
+            }
+            .quizcss .comment-box:before {
+                color: #000000;
+            }
+            .quizcss .comment-box {
+                box-shadow: #000000 0 0 2px 0;
+            }
+            .quizcss .comment-readonly textarea {
+                border: none;
+                outline: none;
+            }
+            #login a {
+                color: #000000;
+            }
+            .quizcss a {
+                color: #000000;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            .quizcss a:hover {
+                text-decoration: none;
+            }
+            .quizcss #tabs a {
+                background-color: #f2f2f3;
+                color: #000000;
+            }
+            .quizcss .component,
+            .quizcss #login,
+            .quizcss #tabs a.active {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            .quizcss .file-adder {
+                border-color: #000000;
+            }
+            .quizcss .component a {
+                color: #000000;
+                font-weight: bold;
+            }
+            .quizcss .warning,
+            .quizcss .the-explanation {
+                background-color: #ffffaf;
+                color: #000000;
+            }
+            .quizcss .component-flash {
+                background-color: #ffffaf;
+            }
+            .quizcss .progress-left {
+                background-color: #000000;
+            }
+            .quizcss .progress-active {
+                background-color: #000000;
+                opacity: .25;
+            }
+        }
+    </style>
+
+    <link href="/static/1664107971/css/print.css" rel="stylesheet" type="text/css" media="print" />
+
+    <script src="/static/1664107971/js/student.js"></script>
+
+
+
+    <script>
+        ready(function() {
+
+
+
+        })
+    </script>
+
+
+
+    <link rel="canonical" href="https://testmoz.com/1" />
+
+</head>
+
+<body class="quizcss">
+
+    <div id="student-messages">
+
+        <div style="display:none" id="duplicate-scoresheet" class="django-warning">
+            You are signed in to this test from another device. If possible, you should exit the test on the other device before continuing. If you believe this is an error, you should contact your test administrator.
+            <button type="button" onclick="this.parentElement.parentElement.removeChild(this.parentElement)">Dismiss</button>
+        </div>
+        <div style="display:none" id="error-offline-template" class="django-warning">
+            Network Error: Your response was not saved.
+            <button type="button" onclick="this.parentElement.parentElement.removeChild(this.parentElement)">Dismiss</button>
+        </div>
+        <div style="display:none" id="error-server-template" class="django-warning">
+            Server Error: Your response was not saved.
+            <button type="button" onclick="this.parentElement.parentElement.removeChild(this.parentElement)">Dismiss</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6553843-8']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <div class="quiz-header" id="quiz-header">
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        ready(function() {
+
+            clickTab();
+
+        });
+
+        var cnt = 0;
+
+        function clickTab(hash) {
+            $('.tab').removeClass('active');
+            if (!hash) {
+                hash = getHash()
+            }
+
+            if (cnt == 1) {
+                $('.info').hide()
+            }
+
+            if (hash == "admin") {
+                $('#login-admin').show();
+                $('#login-student').hide();
+                $('#tab-admin').addClass("active");
+                $('#id_admin-password').focus()
+            } else {
+                $('#login-admin').hide();
+                $('#login-student').show();
+                $('#tab-student').addClass("active");
+                $('#id_student-name').focus()
+            }
+            cnt++;
+        }
+    </script>
+
+
+    <div id="tabs">
+
+        <a href="#student" id="tab-student" class="tab" onclick="clickTab('student')">Student Login</a>
+
+
+
+        <a href="/account/login/?next=/1/admin" id="tab-admin" class="tab">Administration</a>
+
+
+    </div>
+
+    <div id="login">
+        <h1 id="title">Testmoz Test</h1>
+
+
+
+        <div id="login-admin">
+
+            <p><a href="/account/login/?next=/1/admin">Login</a></p>
+
+        </div>
+
+        <div id="login-student">
+
+
+
+
+
+            <form method="post" action="//testmozusercontent.com/q/1/student/login">
+                <input type="text" name="bogusField" style="display: none;" />
+                <input type="hidden" name="csrfmiddlewaretoken" value="GsxCgyfotz8dTGxX0ECpnfcyJEq9l5uHUTpzftzjwE9wcmPnSLmVCL9jW8KErVdN">
+
+                <label for="id_student-name">Enter your name to start the test (or your favorite color)</label>
+                <input type="text" name="student-name" autocomplete="off" required id="id_student-name">
+
+                <input type="hidden" name="admin" value="student" />
+
+                <input type="submit" value="Start" name="student" />
+            </form>
+
+
+        </div>
+    </div>
+
+    <script>
+        var line = document.getElementById("localize-dates");
+        if (line) {
+            line = line.innerHTML;
+            line = line.replace(/\d+/g, function(matched, index, original) {
+                return (new Date(parseInt(matched) * 1000)).toLocaleString();
+            });
+            document.getElementById("localize-dates").innerHTML = line;
+        }
+    </script>
+
+</body>
+
+</html>
